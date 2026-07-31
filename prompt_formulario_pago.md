@@ -87,7 +87,8 @@ Prompt: Garantiza comportamiento responsive:
 1. Movil: flujo vertical, botones full width, inputs comodos para touch.
 2. Tablet: distribucion intermedia con mejor aprovechamiento de columnas.
 3. Escritorio: layout de dos columnas, formulario y resumen.
-4. Cada seccion de etapa del formulario debe tener una altura minima de 80vh para evitar recortes visuales al navegar entre pasos.
+4. Cada seccion de etapa del formulario debe ocupar el viewport util (por ejemplo min-h con calc del alto de pantalla menos header), mostrando el cuadro completo al avanzar sin recortar titulos.
+5. Al navegar entre pasos, aplica offset de scroll para compensar el header sticky y garantizar que el encabezado de cada etapa quede 100% visible.
 Usa breakpoints Tailwind de forma consistente y evita overflow horizontal.
 
 [Accesibilidad]

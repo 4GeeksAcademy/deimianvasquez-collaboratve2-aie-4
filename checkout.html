@@ -152,7 +152,7 @@
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 lg:pb-16">
             <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-10 items-start">
                 <form id="checkout-form" class="space-y-8" action="#" method="post" aria-label="Formulario de checkout">
-                    <fieldset id="step-1" data-step="1" class="bg-grisSuave rounded-[28px] p-6 sm:p-8 min-h-[80vh] flex flex-col justify-between">
+                    <fieldset id="step-1" data-step="1" class="bg-grisSuave rounded-[28px] p-6 sm:p-8 min-h-[calc(100vh-12rem)] scroll-mt-36 flex flex-col justify-between">
                         <legend class="px-2 font-bold text-xl">1. Datos personales</legend>
                         <p class="text-sm text-grisSecundario mb-6">Usaremos esta informacion para confirmar tu compra y contacto de entrega.</p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -181,7 +181,7 @@
                         </div>
                     </fieldset>
 
-                    <fieldset id="step-2" data-step="2" class="bg-grisSuave rounded-[28px] p-6 sm:p-8 min-h-[80vh] flex flex-col justify-between" disabled>
+                    <fieldset id="step-2" data-step="2" class="bg-grisSuave rounded-[28px] p-6 sm:p-8 min-h-[calc(100vh-12rem)] scroll-mt-36 flex flex-col justify-between" disabled>
                         <legend class="px-2 font-bold text-xl">2. Direccion de entrega</legend>
                         <p class="text-sm text-grisSecundario mb-6">Entregas de 2 a 5 dias habiles en zonas urbanas. Cobertura sujeta a codigo postal.</p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -220,7 +220,7 @@
                         </div>
                     </fieldset>
 
-                    <fieldset id="step-3" data-step="3" class="bg-grisSuave rounded-[28px] p-6 sm:p-8 min-h-[80vh] flex flex-col justify-between" disabled>
+                    <fieldset id="step-3" data-step="3" class="bg-grisSuave rounded-[28px] p-6 sm:p-8 min-h-[calc(100vh-12rem)] scroll-mt-36 flex flex-col justify-between" disabled>
                         <legend class="px-2 font-bold text-xl">3. Pago con tarjeta</legend>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
                             <div class="sm:col-span-2">
@@ -250,9 +250,9 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="card-exp-year" class="block text-sm font-medium mb-2">Anio de vencimiento</label>
+                                <label for="card-exp-year" class="block text-sm font-medium mb-2">Año de vencimiento</label>
                                 <select id="card-exp-year" name="card-exp-year" autocomplete="cc-exp-year" required class="w-full rounded-2xl border border-transparent bg-blancoBase px-4 py-3 outline-none focus:border-negroBase">
-                                    <option value="" selected disabled>Selecciona anio</option>
+                                    <option value="" selected disabled>Selecciona año</option>
                                     <option value="2026">2026</option>
                                     <option value="2027">2027</option>
                                     <option value="2028">2028</option>
@@ -441,6 +441,12 @@
 
             form.addEventListener('submit', function (event) {
                 for (let step = 1; step <= 3; step++) {
+                    if (stepFields[step].disabled) {
+                        event.preventDefault();
+                        moveToStep(step);
+                        return;
+                    }
+
                     if (!validateStep(step)) {
                         event.preventDefault();
                         unlockedStep = Math.max(unlockedStep, step);
@@ -448,6 +454,9 @@
                         return;
                     }
                 }
+
+                event.preventDefault();
+                window.location.href = 'index.html';
             });
 
             setActiveStep(1);
