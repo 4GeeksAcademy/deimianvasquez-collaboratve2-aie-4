@@ -35,13 +35,20 @@ Prompt: Crea la estructura:
 6. footer coherente con el sitio.
 Usa etiquetas semanticas y contenido textual real, no placeholders vacios.
 
+[Navegacion de Etapas y Orden Obligatorio]
+Prompt: Implementa una navegacion superior por etapas con botones clickeables para Paso 1, Paso 2 y Paso 3. El flujo debe ser obligatorio en orden:
+1. Primero se completa y valida Paso 1.
+2. Luego se habilita Paso 2.
+3. Finalmente se habilita Paso 3.
+Si el usuario intenta avanzar sin completar el paso anterior, muestra validacion nativa del navegador y llevalo al campo faltante. Los botones superiores deben permitir moverse a secciones ya habilitadas para editar datos.
+
 [Paso 1 - Datos Personales]
 Prompt: Implementa el primer bloque del formulario con campos:
 1. Nombre.
 2. Apellidos.
 3. Correo electronico.
 4. Telefono.
-Incluye labels asociados, atributos name, id, autocomplete, required y mensajes de ayuda cortos. Define diseno responsive con 1 columna en movil y 2 columnas en tablet/escritorio cuando aplique.
+Incluye labels asociados, atributos name, id, autocomplete, required y mensajes de ayuda cortos. El telefono debe aceptar unicamente 10 digitos (sin letras ni simbolos) con validacion nativa HTML. Define diseno responsive con 1 columna en movil y 2 columnas en tablet/escritorio cuando aplique.
 
 [Paso 2 - Direccion de Entrega]
 Prompt: Implementa segundo bloque con campos:
@@ -57,14 +64,14 @@ Usa semantica clara y agrupa campos por logica de captura. Anade texto breve de 
 Prompt: Implementa tercer bloque con:
 1. Nombre en la tarjeta.
 2. Numero de tarjeta.
-3. Fecha de vencimiento.
+3. Fecha de vencimiento con dos desplegables (mes y anio).
 4. CVV.
 5. Checkbox para guardar datos de pago de forma simulada.
 Anade microcopys de confianza:
 1. Pago seguro.
 2. Cifrado de datos.
 3. Proteccion del comprador.
-Manten todos los campos con validaciones HTML nativas y atributos autocomplete de tarjeta.
+Manten todos los campos con validaciones HTML nativas y atributos autocomplete de tarjeta. Los selectores de mes y anio deben conservar el mismo estilo visual del formulario.
 
 [Resumen del Pedido]
 Prompt: Crea un panel de resumen de compra con:
@@ -80,6 +87,7 @@ Prompt: Garantiza comportamiento responsive:
 1. Movil: flujo vertical, botones full width, inputs comodos para touch.
 2. Tablet: distribucion intermedia con mejor aprovechamiento de columnas.
 3. Escritorio: layout de dos columnas, formulario y resumen.
+4. Cada seccion de etapa del formulario debe tener una altura minima de 80vh para evitar recortes visuales al navegar entre pasos.
 Usa breakpoints Tailwind de forma consistente y evita overflow horizontal.
 
 [Accesibilidad]
@@ -106,9 +114,11 @@ Prompt: Aplica optimizaciones orientadas a alto puntaje:
 [Checklist de Entrega]
 Prompt: Valida que el resultado cumpla:
 1. Flujo de checkout en 3 pasos completo.
-2. HTML + Tailwind unicamente.
-3. Diseno consistente con index.html.
-4. Conexion de paginas por navbar y acciones principales.
-5. Semantica SEO y contenido indexable tecnico.
-6. Responsive real en movil, tablet y escritorio.
-7. Base solida para superar 90 en PageSpeed.
+2. Orden obligatorio entre etapas (Paso 1 -> Paso 2 -> Paso 3).
+3. Botones superiores clickeables con navegacion por seccion.
+4. HTML + Tailwind unicamente.
+5. Diseno consistente con index.html.
+6. Conexion de paginas por navbar y acciones principales.
+7. Semantica SEO y contenido indexable tecnico.
+8. Responsive real en movil, tablet y escritorio.
+9. Base solida para superar 90 en PageSpeed.
