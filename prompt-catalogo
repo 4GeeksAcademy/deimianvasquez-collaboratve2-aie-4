@@ -1,27 +1,42 @@
-**[Catálogo]**
 ### CONTEXTO
-Estamos construyendo la página de una tienda de ropa llamada "florale". Ya tengo el header y el footer hechos en index.html, usando Tailwind CSS vía CDN con esta configuración ya definida en el <head>:
-colores: blancoBase (#FFFFFF), grisSuave (#F3F3F3), negroBase (#1A1A1A), grisSecundario (#757575), verdeAmarillo (#e9f7b2), lavender (#8875FF)
-fuentes: font-sans (Google Sans/DM Sans), font-display (Google Sans Flex/DM Sans), font-script (League Script, usado en el logo "florale")
-El body ya tiene: bg-blancoBase text-negroBase font-sans
+Estoy construyendo la página de una tienda de ropa llamada "florale". 
+Cada colaborador del equipo está creando su propia carpeta con su .html 
+y .md independiente (no vamos a modificar el index.html compartido). 
+Mi parte es el CATÁLOGO de productos.
 
-El código existente usa comentarios HTML descriptivos en cada bloque, 
+El proyecto usa Tailwind CSS vía CDN con esta configuración ya definida 
+(debo replicarla en mi propio archivo para que se vea igual):
+
+colores: blancoBase (#FFFFFF), grisSuave (#F3F3F3), negroBase (#1A1A1A), 
+grisSecundario (#757575), verdeAmarillo (#e9f7b2), lavender (#8875FF)
+
+fuentes: font-sans (Google Sans/DM Sans), font-display (Google Sans Flex/DM Sans), 
+font-script (League Script, usado en el logo "florale")
+
+El body del proyecto usa: bg-blancoBase text-negroBase font-sans
+
+Mis compañeros usan comentarios HTML descriptivos en cada bloque, 
 por ejemplo:
 <!-- Header Semántico -->
 <!-- Logo / Brand -->
 <!-- Columna 1: Marca y Newsletter -->
 
+
 ### RESTRICCIONES
-No uses colores ni fuentes que no estén en mi configuración de Tailwind. Usa la misma estructura de contenedor que el header: 
+Crea un archivo HTML independiente y completo (con <!DOCTYPE html>, <head> 
+y <body>), no un fragmento para insertar en otro archivo.
+Incluye en el <head> el script del CDN de Tailwind y la misma configuración 
+de colores y fuentes de arriba, para que se vea igual aunque sea un archivo separado.
+No uses colores ni fuentes que no estén en esa configuración.
+Usa la misma estructura de contenedor que el resto del proyecto: 
 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
 Usa imágenes de placeholder de picsum.photos.
-Mantén el mismo estilo de comentarios HTML descriptivos que se usaron, 
-agregando uno antes de cada sección y sub-bloque importante 
-(ej. <!-- Hero / Banner destacado -->, <!-- Mini productos destacados -->, <!-- Tarjeta de producto -->).
+Mantén el mismo estilo de comentarios HTML descriptivos que usa el equipo, 
+agregando uno antes de cada sección y sub-bloque importante.
 
 
 ### TAREA
-Necesito que agregues, entre mi </header> y mi <footer>, dos secciones nuevas:
+Crea un archivo catalogo.html con dos secciones:
 
 1. Un HERO banner con:
    - Grid de 2 columnas (1 en mobile)
@@ -42,4 +57,5 @@ Necesito que agregues, entre mi </header> y mi <footer>, dos secciones nuevas:
 
 
 ### FORMATO DE SALIDA
-Escribe el HTML completo listo para insertar en mi archivo.
+Escribe el archivo HTML completo y autocontenido, listo para abrir 
+directamente en el navegador, con comentarios descriptivos en cada bloque.

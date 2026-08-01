@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>florale | Catálogo</title>
+
+	<!-- Tipografías del Proyecto -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Google+Sans+Text:wght@400;500;700&family=Google+Sans+Flex:opsz,wght@8..144,400;8..144,600;8..144,700;8..144,800&family=League+Script&display=swap"
+		rel="stylesheet"
+	/>
+
+	<!-- Tailwind CSS CDN -->
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<!-- Configuración de Tailwind Igual al Proyecto -->
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						blancoBase: '#FFFFFF',
+						grisSuave: '#F3F3F3',
+						negroBase: '#1A1A1A',
+						grisSecundario: '#757575',
+						verdeAmarillo: '#e9f7b2',
+						lavender: '#8875FF'
+					},
+					fontFamily: {
+						sans: ['Google Sans Text', 'DM Sans', 'sans-serif'],
+						display: ['Google Sans Flex', 'DM Sans', 'sans-serif'],
+						script: ['League Script', 'cursive']
+					}
+				}
+			}
+		};
+	</script>
+</head>
+<body class="bg-blancoBase text-negroBase font-sans">
+	<!-- Contenedor General de Página -->
+	<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-14">
+
+		<!-- Sección Hero Principal -->
+		<section aria-labelledby="hero-title" class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+
+			<!-- Columna Izquierda: Imagen Destacada -->
+			<article class="relative overflow-hidden rounded-3xl min-h-[430px] sm:min-h-[520px]">
+				<!-- Imagen Hero -->
+				<img
+					src="https://picsum.photos/seed/florale-hero/1200/1500"
+					alt="Modelo vistiendo colección de temporada"
+					class="absolute inset-0 h-full w-full object-cover"
+				/>
+
+				<!-- Overlay Oscuro Degradado -->
+				<div class="absolute inset-0 bg-gradient-to-t from-negroBase/90 via-negroBase/35 to-negroBase/10"></div>
+
+				<!-- Contenido Inferior del Hero -->
+				<div class="relative h-full flex flex-col justify-end p-6 sm:p-8 text-blancoBase">
+					<!-- Etiqueta Superior -->
+					<p class="text-xs sm:text-sm tracking-[0.2em] uppercase text-blancoBase/80">Selección floral</p>
+
+					<!-- Título Hero -->
+					<h1 id="hero-title" class="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
+						Colección de la semana
+					</h1>
+
+					<!-- Bloque Avatar y Acción -->
+					<div class="mt-6 flex items-center justify-between gap-4 flex-wrap">
+						<!-- Avatar y Autoría -->
+						<div class="flex items-center gap-3">
+							<img
+								src="https://picsum.photos/seed/florale-avatar/120/120"
+								alt="Avatar de estilista florale"
+								class="w-11 h-11 rounded-full border-2 border-blancoBase/80 object-cover"
+							/>
+							<div>
+								<p class="text-sm font-medium">Equipo florale</p>
+								<p class="text-xs text-blancoBase/75">Curaduría semanal</p>
+							</div>
+						</div>
+
+						<!-- Enlace de Exploración -->
+						<a
+							href="#catalogo"
+							class="inline-flex items-center gap-2 text-sm font-semibold border border-blancoBase/70 px-4 py-2 rounded-full hover:bg-blancoBase hover:text-negroBase transition-colors"
+						>
+							Explorar la colección
+							<span aria-hidden="true">→</span>
+						</a>
+					</div>
+				</div>
+			</article>
+
+			<!-- Columna Derecha: Texto, CTA y Mini Productos -->
+			<article class="bg-grisSuave rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col">
+				<!-- Encabezado de Columna Derecha -->
+				<div>
+					<p class="text-xs sm:text-sm uppercase tracking-[0.2em] text-grisSecundario">Novedades florale</p>
+					<h2 class="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.05]">
+						Prendas ligeras para cada ritmo del día
+					</h2>
+					<p class="mt-4 text-grisSecundario text-sm sm:text-base max-w-xl">
+						Siluetas suaves, texturas cómodas y tonos limpios para combinar sin esfuerzo. Diseñadas para moverte con estilo.
+					</p>
+				</div>
+
+				<!-- Botón Principal de Compra -->
+				<div class="mt-6 sm:mt-8">
+					<a
+						href="#catalogo"
+						class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-verdeAmarillo text-negroBase font-semibold hover:opacity-90 transition-opacity"
+					>
+						Comprar ahora
+					</a>
+				</div>
+
+				<!-- Lista de Mini Productos -->
+				<div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+					<!-- Mini Producto 1 -->
+					<article class="bg-blancoBase rounded-2xl p-3">
+						<img
+							src="https://picsum.photos/seed/florale-mini-1/400/500"
+							alt="Mini producto blusa luna"
+							class="w-full h-32 object-cover rounded-xl"
+						/>
+						<h3 class="mt-3 text-sm font-semibold">Blusa Luna</h3>
+						<p class="text-sm text-grisSecundario">$48.00</p>
+					</article>
+
+					<!-- Mini Producto 2 -->
+					<article class="bg-blancoBase rounded-2xl p-3">
+						<img
+							src="https://picsum.photos/seed/florale-mini-2/400/500"
+							alt="Mini producto pantalón aire"
+							class="w-full h-32 object-cover rounded-xl"
+						/>
+						<h3 class="mt-3 text-sm font-semibold">Pantalón Aire</h3>
+						<p class="text-sm text-grisSecundario">$55.00</p>
+					</article>
+
+					<!-- Mini Producto 3 -->
+					<article class="bg-blancoBase rounded-2xl p-3">
+						<img
+							src="https://picsum.photos/seed/florale-mini-3/400/500"
+							alt="Mini producto vestido pétalo"
+							class="w-full h-32 object-cover rounded-xl"
+						/>
+						<h3 class="mt-3 text-sm font-semibold">Vestido Pétalo</h3>
+						<p class="text-sm text-grisSecundario">$72.00</p>
+					</article>
+				</div>
+			</article>
+		</section>
+
+		<!-- Sección de Catálogo de Productos -->
+		<section id="catalogo" aria-labelledby="catalogo-title" class="space-y-7">
+			<!-- Encabezado del Catálogo -->
+			<div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+				<!-- Título de Sección -->
+				<h2 id="catalogo-title" class="font-display text-3xl sm:text-4xl lg:text-5xl">Nuestro Catálogo</h2>
+
+				<!-- Grupo de Filtros Pills -->
+				<div class="flex items-center gap-3 flex-wrap">
+					<!-- Filtro Activo -->
+					<button type="button" class="px-5 py-2.5 rounded-full bg-negroBase text-blancoBase text-sm font-medium">
+						Más vendidos
+					</button>
+
+					<!-- Filtro Tendencia -->
+					<button
+						type="button"
+						class="px-5 py-2.5 rounded-full bg-grisSuave text-negroBase text-sm font-medium hover:bg-verdeAmarillo transition-colors"
+					>
+						Tendencia
+					</button>
+
+					<!-- Filtro Nuevo -->
+					<button
+						type="button"
+						class="px-5 py-2.5 rounded-full bg-grisSuave text-negroBase text-sm font-medium hover:bg-verdeAmarillo transition-colors"
+					>
+						Nuevo
+					</button>
+				</div>
+			</div>
+
+			<!-- Grid Responsive de Productos -->
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+
+				<!-- Tarjeta Producto 1 -->
+				<article class="group">
+					<!-- Contenedor Visual de Producto -->
+					<div class="relative">
+						<img
+							src="https://picsum.photos/seed/florale-card-1/700/900"
+							alt="Cardigan nube"
+							class="w-full aspect-[3/4] object-cover rounded-2xl"
+						/>
+
+						<!-- Badge de Categoría -->
+						<span class="absolute top-3 left-3 bg-blancoBase/90 text-negroBase text-xs font-medium px-3 py-1 rounded-full">Tejido</span>
+
+						<!-- Botón Favorito -->
+						<button
+							type="button"
+							aria-label="Agregar cardigan nube a favoritos"
+							class="absolute top-3 right-3 bg-blancoBase/90 hover:bg-verdeAmarillo w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+						>
+							♡
+						</button>
+					</div>
+
+					<!-- Información del Producto -->
+					<div class="mt-3">
+						<h3 class="text-sm sm:text-base font-semibold">Cardigan Nube</h3>
+						<p class="text-sm text-grisSecundario mt-1">$64.00</p>
+					</div>
+				</article>
+
+				<!-- Tarjeta Producto 2 -->
+				<article class="group">
+					<!-- Contenedor Visual de Producto -->
+					<div class="relative">
+						<img
+							src="https://picsum.photos/seed/florale-card-2/700/900"
+							alt="Falda duna"
+							class="w-full aspect-[3/4] object-cover rounded-2xl"
+						/>
+
+						<!-- Badge de Categoría -->
+						<span class="absolute top-3 left-3 bg-blancoBase/90 text-negroBase text-xs font-medium px-3 py-1 rounded-full">Faldas</span>
+
+						<!-- Botón Favorito -->
+						<button
+							type="button"
+							aria-label="Agregar falda duna a favoritos"
+							class="absolute top-3 right-3 bg-blancoBase/90 hover:bg-verdeAmarillo w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+						>
+							♡
+						</button>
+					</div>
+
+					<!-- Información del Producto -->
+					<div class="mt-3">
+						<h3 class="text-sm sm:text-base font-semibold">Falda Duna</h3>
+						<p class="text-sm text-grisSecundario mt-1">
+							<span class="line-through mr-2">$58.00</span>
+							<span class="text-negroBase font-semibold">$49.00</span>
+						</p>
+					</div>
+				</article>
+
+				<!-- Tarjeta Producto 3 -->
+				<article class="group">
+					<!-- Contenedor Visual de Producto -->
+					<div class="relative">
+						<img
+							src="https://picsum.photos/seed/florale-card-3/700/900"
+							alt="Camisa aura"
+							class="w-full aspect-[3/4] object-cover rounded-2xl"
+						/>
+
+						<!-- Badge de Categoría -->
+						<span class="absolute top-3 left-3 bg-blancoBase/90 text-negroBase text-xs font-medium px-3 py-1 rounded-full">Camisas</span>
+
+						<!-- Botón Favorito -->
+						<button
+							type="button"
+							aria-label="Agregar camisa aura a favoritos"
+							class="absolute top-3 right-3 bg-blancoBase/90 hover:bg-verdeAmarillo w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+						>
+							♡
+						</button>
+					</div>
+
+					<!-- Información del Producto -->
+					<div class="mt-3">
+						<h3 class="text-sm sm:text-base font-semibold">Camisa Aura</h3>
+						<p class="text-sm text-grisSecundario mt-1">$46.00</p>
+					</div>
+				</article>
+
+				<!-- Tarjeta Producto 4 -->
+				<article class="group">
+					<!-- Contenedor Visual de Producto -->
+					<div class="relative">
+						<img
+							src="https://picsum.photos/seed/florale-card-4/700/900"
+							alt="Vestido rocío"
+							class="w-full aspect-[3/4] object-cover rounded-2xl"
+						/>
+
+						<!-- Badge de Categoría -->
+						<span class="absolute top-3 left-3 bg-blancoBase/90 text-negroBase text-xs font-medium px-3 py-1 rounded-full">Vestidos</span>
+
+						<!-- Botón Favorito -->
+						<button
+							type="button"
+							aria-label="Agregar vestido rocío a favoritos"
+							class="absolute top-3 right-3 bg-blancoBase/90 hover:bg-verdeAmarillo w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+						>
+							♡
+						</button>
+					</div>
+
+					<!-- Información del Producto -->
+					<div class="mt-3">
+						<h3 class="text-sm sm:text-base font-semibold">Vestido Rocío</h3>
+						<p class="text-sm text-grisSecundario mt-1">
+							<span class="line-through mr-2">$86.00</span>
+							<span class="text-negroBase font-semibold">$74.00</span>
+						</p>
+					</div>
+				</article>
+
+				<!-- Tarjeta Producto 5 -->
+				<article class="group">
+					<!-- Contenedor Visual de Producto -->
+					<div class="relative">
+						<img
+							src="https://picsum.photos/seed/florale-card-5/700/900"
+							alt="Pantalón brisa"
+							class="w-full aspect-[3/4] object-cover rounded-2xl"
+						/>
+
+						<!-- Badge de Categoría -->
+						<span class="absolute top-3 left-3 bg-blancoBase/90 text-negroBase text-xs font-medium px-3 py-1 rounded-full">Pantalones</span>
+
+						<!-- Botón Favorito -->
+						<button
+							type="button"
+							aria-label="Agregar pantalón brisa a favoritos"
+							class="absolute top-3 right-3 bg-blancoBase/90 hover:bg-verdeAmarillo w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+						>
+							♡
+						</button>
+					</div>
+
+					<!-- Información del Producto -->
+					<div class="mt-3">
+						<h3 class="text-sm sm:text-base font-semibold">Pantalón Brisa</h3>
+						<p class="text-sm text-grisSecundario mt-1">$52.00</p>
+					</div>
+				</article>
+
+				<!-- Tarjeta Producto 6 -->
+				<article class="group">
+					<!-- Contenedor Visual de Producto -->
+					<div class="relative">
+						<img
+							src="https://picsum.photos/seed/florale-card-6/700/900"
+							alt="Blazer claro"
+							class="w-full aspect-[3/4] object-cover rounded-2xl"
+						/>
+
+						<!-- Badge de Categoría -->
+						<span class="absolute top-3 left-3 bg-blancoBase/90 text-negroBase text-xs font-medium px-3 py-1 rounded-full">Blazers</span>
+
+						<!-- Botón Favorito -->
+						<button
+							type="button"
+							aria-label="Agregar blazer claro a favoritos"
+							class="absolute top-3 right-3 bg-blancoBase/90 hover:bg-verdeAmarillo w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+						>
+							♡
+						</button>
+					</div>
+
+					<!-- Información del Producto -->
+					<div class="mt-3">
+						<h3 class="text-sm sm:text-base font-semibold">Blazer Claro</h3>
+						<p class="text-sm text-grisSecundario mt-1">$79.00</p>
+					</div>
+				</article>
+
+				<!-- Tarjeta Producto 7 -->
+				<article class="group">
+					<!-- Contenedor Visual de Producto -->
+					<div class="relative">
+						<img
+							src="https://picsum.photos/seed/florale-card-7/700/900"
+							alt="Top esencia"
+							class="w-full aspect-[3/4] object-cover rounded-2xl"
+						/>
+
+						<!-- Badge de Categoría -->
+						<span class="absolute top-3 left-3 bg-blancoBase/90 text-negroBase text-xs font-medium px-3 py-1 rounded-full">Tops</span>
+
+						<!-- Botón Favorito -->
+						<button
+							type="button"
+							aria-label="Agregar top esencia a favoritos"
+							class="absolute top-3 right-3 bg-blancoBase/90 hover:bg-verdeAmarillo w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+						>
+							♡
+						</button>
+					</div>
+
+					<!-- Información del Producto -->
+					<div class="mt-3">
+						<h3 class="text-sm sm:text-base font-semibold">Top Esencia</h3>
+						<p class="text-sm text-grisSecundario mt-1">
+							<span class="line-through mr-2">$41.00</span>
+							<span class="text-negroBase font-semibold">$34.00</span>
+						</p>
+					</div>
+				</article>
+
+				<!-- Tarjeta Producto 8 -->
+				<article class="group">
+					<!-- Contenedor Visual de Producto -->
+					<div class="relative">
+						<img
+							src="https://picsum.photos/seed/florale-card-8/700/900"
+							alt="Set garden"
+							class="w-full aspect-[3/4] object-cover rounded-2xl"
+						/>
+
+						<!-- Badge de Categoría -->
+						<span class="absolute top-3 left-3 bg-blancoBase/90 text-negroBase text-xs font-medium px-3 py-1 rounded-full">Conjuntos</span>
+
+						<!-- Botón Favorito -->
+						<button
+							type="button"
+							aria-label="Agregar set garden a favoritos"
+							class="absolute top-3 right-3 bg-blancoBase/90 hover:bg-verdeAmarillo w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+						>
+							♡
+						</button>
+					</div>
+
+					<!-- Información del Producto -->
+					<div class="mt-3">
+						<h3 class="text-sm sm:text-base font-semibold">Set Garden</h3>
+						<p class="text-sm text-grisSecundario mt-1">$88.00</p>
+					</div>
+				</article>
+			</div>
+		</section>
+	</main>
+</body>
+</html>
