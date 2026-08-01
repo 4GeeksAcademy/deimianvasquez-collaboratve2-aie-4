@@ -21,3 +21,48 @@ Prompt: Debajo de la cuadrícula del producto, añade una nueva etiqueta <sectio
 **[El Footer del E-commerce]**
 Prompt: Al final del documento, fuera del main, implementa un componente <footer> con fondo grisSuave. Estructúralo en una cuadrícula responsiva: una columna principal que incluya el logo y un input para suscribirse a un newsletter con su respectivo botón de envío. Las siguientes columnas deben contener listas de enlaces para "Tienda" y "Atención al Cliente". Finaliza con una línea divisoria inferior que contenga el copyright y un icono genérico de redes sociales.
 
+**[Catálogo]**
+### CONTEXTO
+Estamos construyendo la página de una tienda de ropa llamada "florale". Ya tengo el header y el footer hechos en index.html, usando Tailwind CSS vía CDN con esta configuración ya definida en el <head>:
+colores: blancoBase (#FFFFFF), grisSuave (#F3F3F3), negroBase (#1A1A1A), grisSecundario (#757575), verdeAmarillo (#e9f7b2), lavender (#8875FF)
+fuentes: font-sans (Google Sans/DM Sans), font-display (Google Sans Flex/DM Sans), font-script (League Script, usado en el logo "florale")
+El body ya tiene: bg-blancoBase text-negroBase font-sans
+
+El código existente usa comentarios HTML descriptivos en cada bloque, 
+por ejemplo:
+<!-- Header Semántico -->
+<!-- Logo / Brand -->
+<!-- Columna 1: Marca y Newsletter -->
+
+### RESTRICCIONES
+No uses colores ni fuentes que no estén en mi configuración de Tailwind. Usa la misma estructura de contenedor que el header: 
+max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+Usa imágenes de placeholder de picsum.photos.
+Mantén el mismo estilo de comentarios HTML descriptivos que se usaron, 
+agregando uno antes de cada sección y sub-bloque importante 
+(ej. <!-- Hero / Banner destacado -->, <!-- Mini productos destacados -->, <!-- Tarjeta de producto -->).
+
+
+### TAREA
+Necesito que agregues, entre mi </header> y mi <footer>, dos secciones nuevas:
+
+1. Un HERO banner con:
+   - Grid de 2 columnas (1 en mobile)
+   - Columna izquierda: imagen grande con overlay oscuro degradado y texto 
+     "Colección de la semana" con avatar y enlace "Explorar la colección"
+   - Columna derecha: fondo grisSuave, título grande con font-display, 
+     texto de apoyo, botón "Comprar ahora" en bg-verdeAmarillo, 
+     y 3 mini-productos con imagen, nombre y precio
+
+2. Una sección de CATÁLOGO con:
+   - Título "Nuestro Catálogo" en font-display
+   - Filtros tipo pills: "Más vendidos" (activo, bg-negroBase), 
+     "Tendencia" y "Nuevo" (bg-grisSuave con hover bg-verdeAmarillo)
+   - Grid de productos responsive (2 columnas mobile, 3 tablet, 4 desktop)
+   - Cada tarjeta con: imagen (aspect-[3/4], rounded-2xl), botón de favorito 
+     flotante, badge de categoría flotante, nombre del producto y precio 
+     (algunos con precio anterior tachado)
+
+
+### FORMATO DE SALIDA
+Escribe el HTML completo listo para insertar en mi archivo.
