@@ -1,0 +1,12 @@
+:root {
+    --blanco-base: #ffffff;
+    --gris-suave: #f3f3f3;
+    --negro-base: #1a1a1a;
+    --gris-secundario: #757575;
+    --verde-amarillo: #e9f7b2;
+}
+/* Importación de fuentes */
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
