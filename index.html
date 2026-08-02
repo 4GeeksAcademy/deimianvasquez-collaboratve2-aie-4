@@ -17,11 +17,35 @@
     <meta property="og:site_name" content="Florale">
     <meta property="og:image" content="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=1200">
     <meta property="og:image:alt" content="Mujer luciendo vestido floral de primavera">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Vestido Primavera Floral - Moda Juvenil | Tu E-commerce">
     <meta name="twitter:description" content="Vestido de primavera casual y juvenil con estampado de flores. Conoce sus materiales ecológicos y descubre el look perfecto para esta temporada.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=1200">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./assets/fonts/fonts.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            blancoBase: '#FFFFFF',
+                            grisSuave: '#F3F3F3',
+                            negroBase: '#1A1A1A',
+                            grisSecundario: '#757575',
+                            verdeAmarillo: '#e9f7b2',
+                            lavender: '#8875FF'
+                        },
+                    },
+                        fontFamily: {
+                            sans: ['"Google Sans"', '"DM Sans"', 'sans-serif'],
+                            display: ['"Google Sans Flex"', '"DM Sans"', 'sans-serif'],
+                            script: ['"League Script"', 'cursive']
+                    }
+                }
+            }
+       </script>
 
     <script type="application/ld+json">
         {
@@ -92,258 +116,238 @@
             ]
         }
     </script>
+     
+
+
+
     
-    <!-- Importación de fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=League+Script&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        blancoBase: '#FFFFFF',
-                        grisSuave: '#F3F3F3',
-                        negroBase: '#1A1A1A',
-                        grisSecundario: '#757575',
-                        verdeAmarillo: '#e9f7b2',
-                        lavender: '#8875FF'
-                    },
-                    fontFamily: {
-                        sans: ['"Google Sans"', '"DM Sans"', 'sans-serif'],
-                        display: ['"Google Sans Flex"', '"DM Sans"', 'sans-serif'],
-                        script: ['"League Script"', 'cursive']
-                    }
-                }
-            }
-        }
-    </script>
+     
+   
+    
+    
 </head>
-<body class="bg-blancoBase text-negroBase font-sans antialiased selection:bg-verdeAmarillo selection:text-negroBase flex flex-col min-h-screen">
-
-    <!-- Header Semántico -->
-    <header class="sticky top-0 z-50 bg-blancoBase border-b border-grisSuave">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
-            
-            <!-- Logo / Brand -->
-            <a href="index.html" class="font-script text-4xl text-lavender hover:text-negroBase transition-colors" aria-label="Ir al inicio">
-                florale
+<body>
+    <header class="sticky top-0 z-50 border-b border-gray-200 bg-blancoBase/95 backdrop-blur">
+        <nav class="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-3 md:px-6" aria-label="Barra principal">
+            <a href="#" class="flex items-center gap-2">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-verdeAmarillo text-negroBase font-display text-lg">F</span>
+                <div class="leading-tight">
+                    <p class="font-display text-xl text-negroBase">Florale®</p>
+                    <p class="text-xs text-grisSecundario">Moda juvenil</p>
+                </div>
             </a>
-
-            <!-- Barra de búsqueda (Desktop) -->
-            <div class="hidden md:flex flex-1 max-w-lg bg-grisSuave rounded-full px-4 py-2.5 items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-grisSecundario">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                </svg>
-                <input type="text" placeholder="¿Qué estás buscando?" class="bg-transparent w-full text-sm outline-none text-negroBase placeholder-grisSecundario">
+            <div class="hidden items-center gap-1 text-sm font-medium text-negroBase md:flex">
+                <a href="./index.html" class="rounded-full px-3 py-2 transition hover:bg-grisSuave">Inicio</a>
+                <a href="#catalogo" class="rounded-full px-3 py-2 transition hover:bg-grisSuave">Catálogo</a>
             </div>
-
-            <!-- Navegación y Acciones -->
-            <nav class="flex items-center gap-4 lg:gap-6" aria-label="Navegación principal">
-                <button class="hidden lg:flex items-center gap-1 font-medium hover:text-grisSecundario transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                    Menú
-                </button>
-
-                <div class="flex items-center gap-3">
-                    <!-- Wishlist -->
-                    <button aria-label="Favoritos" class="p-2 hover:bg-grisSuave rounded-full transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            <form class="flex-1" role="search" aria-label="Buscar productos">
+                <label for="search" class="sr-only">Buscar</label>
+                <div class="relative">
+                    <input
+                        id="search"
+                        type="search"
+                        name="q"
+                        placeholder="Buscar vestidos, blusas y accesorios"
+                        class="w-full rounded-full border border-gray-300 bg-grisSuave py-2 pl-4 pr-12 text-sm text-negroBase placeholder:text-grisSecundario focus:border-negroBase focus:outline-none"
+                    >
+                    <button
+                        type="submit"
+                        class="absolute right-1 top-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-negroBase text-blancoBase transition hover:opacity-90"
+                        aria-label="Buscar"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35m0 0A7.5 7.5 0 1 0 6.04 6.04a7.5 7.5 0 0 0 10.61 10.61Z" />
                         </svg>
-                    </button>
-                    <!-- Carrito con Badge -->
-                    <button id="header-cart-button" aria-label="Carrito de compras" class="p-2 hover:bg-grisSuave rounded-full transition-colors relative" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                        </svg>
-                        <span id="header-cart-count" class="absolute top-0 right-0 bg-verdeAmarillo text-negroBase text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center translate-x-1 -translate-y-1">0</span>
-                    </button>
-                    <!-- Perfil -->
-                    <button class="hidden sm:flex items-center gap-2 hover:opacity-80 transition-opacity ml-2">
-                        <img src="https://i.pravatar.cc/100?img=5" alt="Avatar del usuario" class="w-8 h-8 rounded-full bg-grisSuave">
                     </button>
                 </div>
-            </nav>
-        </div>
+            </form>
+            <a href="./Pages/cart.html" class="relative inline-flex items-center justify-center rounded-full border border-gray-300 p-2 text-negroBase transition hover:bg-grisSuave" aria-label="Carrito de compra">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386a1.5 1.5 0 0 1 1.414.98L5.654 6m0 0h12.192a1.5 1.5 0 0 1 1.445 1.902l-1.2 4.2a1.5 1.5 0 0 1-1.445 1.098H7.096a1.5 1.5 0 0 1-1.445-1.098L4.25 4.5M5.654 6l-1.404 6.102m5.25 6.148a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm8.25 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+                <span class="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-negroBase px-1 text-xs text-blancoBase">2</span>
+            </a>
+            <details class="relative">
+                <summary class="list-none">
+                    <span class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-gray-300 px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">
+                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-negroBase text-xs text-blancoBase">DV</span>
+                        <span class="hidden sm:inline">Mi cuenta</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="absolute right-0 mt-2 w-44 rounded-xl border border-gray-200 bg-blancoBase p-2 shadow-lg">
+                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Perfil</a>
+                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Mis pedidos</a>
+                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Cerrar sesión</a>
+                </div>
+            </details>
+        </nav>
     </header>
 
-    <!-- Contenido Principal -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 w-full">
-        
-        <!-- Breadcrumbs -->
-        <nav aria-label="Breadcrumb" class="mb-8">
-            <ol class="flex items-center space-x-2 text-sm text-grisSecundario">
-                <li><a href="#" class="hover:text-negroBase transition-colors">Inicio</a></li>
-                <li><span aria-hidden="true">/</span></li>
-                <li><a href="#" class="hover:text-negroBase transition-colors">Ropa de Mujer</a></li>
-                <li><span aria-hidden="true">/</span></li>
-                <li><a href="#" class="hover:text-negroBase transition-colors">Vestidos</a></li>
-                <li><span aria-hidden="true">/</span></li>
-                <li class="text-negroBase font-medium" aria-current="page">Vestido Primavera Floral</li>
-            </ol>
-        </nav>
-
-        <!-- Vista Principal del Producto -->
-        <article class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-            
-            <figure class="w-full flex flex-col gap-4">
-                <img
-                    id="product-image"
-                    src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Mujer luciendo un vestido de primavera casual y juvenil con estampado floral en un campo" 
-                    class="w-full h-auto aspect-[4/5] object-cover rounded-[32px] shadow-sm bg-grisSuave"
-                    loading="eager"
-                >
-            </figure>
-
-            <section class="flex flex-col justify-center">
-                <span class="font-script text-lavender text-4xl mb-2">spring vibes</span>
-                <h1 id="product-name" class="font-display text-4xl lg:text-5xl font-bold tracking-tight text-negroBase mb-2">
-                    Vestido Primavera Floral
-                </h1>
-                <p id="product-sku" class="text-sm text-grisSecundario mb-6 font-medium">Ref: #VS-FLORAL-26</p>
-                
-                <div class="mb-8">
-                    <p class="text-3xl font-bold text-negroBase">
-                        $850.00 <span class="text-lg text-grisSecundario font-normal ml-1">MXN</span>
-                    </p>
-                </div>
-
-                <form id="product-form" class="space-y-8">
-                    <fieldset>
-                        <legend class="text-negroBase font-medium mb-4">Selecciona tu Talla</legend>
+    <main>
+        <section class="relative overflow-hidden bg-gradient-to-br from-[#fffdf4] via-[#f8fce8] to-[#f5efe9]">
+            <div class="mx-auto w-full max-w-7xl px-4 py-12 md:px-6 md:py-16">
+                <div class="grid gap-6 rounded-3xl border border-white/70 bg-white/70 p-6 shadow-[0_24px_70px_rgba(26,26,26,0.10)] backdrop-blur md:grid-cols-2">
+                    <article class="flex flex-col gap-4">
+                        <p class="inline-flex w-fit rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-grisSecundario">
+                            Campana de marca
+                        </p>
+                        <h1 class="font-display text-4xl leading-tight text-negroBase md:text-6xl">
+                            Primavera en movimiento
+                        </h1>
+                        <p class="text-sm text-grisSecundario md:text-base">
+                            Descubre piezas curadas para dias calidos: vestidos ligeros, capas de lino y detalles florales para looks de ciudad y escapada.
+                        </p>
                         <div class="flex flex-wrap gap-3">
-                            <div>
-                                <input type="radio" id="talla-s" name="talla" value="S" class="peer sr-only" required>
-                                <label for="talla-s" class="flex items-center justify-center w-12 h-12 rounded-full border border-grisSuave text-negroBase cursor-pointer peer-checked:bg-negroBase peer-checked:text-blancoBase peer-checked:border-negroBase hover:border-negroBase transition-all">S</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="talla-m" name="talla" value="M" class="peer sr-only">
-                                <label for="talla-m" class="flex items-center justify-center w-12 h-12 rounded-full border border-grisSuave text-negroBase cursor-pointer peer-checked:bg-negroBase peer-checked:text-blancoBase peer-checked:border-negroBase hover:border-negroBase transition-all">M</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="talla-l" name="talla" value="L" class="peer sr-only">
-                                <label for="talla-l" class="flex items-center justify-center w-12 h-12 rounded-full border border-grisSuave text-negroBase cursor-pointer peer-checked:bg-negroBase peer-checked:text-blancoBase peer-checked:border-negroBase hover:border-negroBase transition-all">L</label>
-                            </div>
+                            <a href="#catalogo" class="rounded-full bg-negroBase px-5 py-2.5 text-sm font-semibold text-blancoBase">Ver catalogo</a>
+                            <a href="./Pages/cart.html" class="rounded-full border border-negroBase px-5 py-2.5 text-sm font-semibold text-negroBase">Comprar ahora</a>
                         </div>
-                    </fieldset>
+                    </article>
+                    <article class="overflow-hidden rounded-2xl">
+                        <img src="./assets/imagen/hero-campana.jpg" alt="Campana Florale primavera" class="h-full min-h-[20rem] w-full object-cover">
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                    <div>
-                        <label for="cantidad" class="block text-negroBase font-medium mb-4">Cantidad</label>
-                        <div class="flex items-center bg-grisSuave rounded-full w-32 p-1">
-                            <button id="qty-decrease" type="button" class="w-8 h-8 flex items-center justify-center text-negroBase hover:bg-blancoBase rounded-full transition-colors" aria-label="Disminuir cantidad"><span class="text-xl leading-none">&minus;</span></button>
-                            <input type="number" id="cantidad" name="cantidad" value="1" min="1" class="w-full bg-transparent text-center font-medium text-negroBase focus:outline-none appearance-none" aria-label="Cantidad a comprar">
-                            <button id="qty-increase" type="button" class="w-8 h-8 flex items-center justify-center text-negroBase hover:bg-blancoBase rounded-full transition-colors" aria-label="Aumentar cantidad"><span class="text-xl leading-none">&plus;</span></button>
-                        </div>
+        <section id="catalogo" class="mx-auto w-full max-w-7xl px-4 py-12 md:px-6">
+            <div class="mb-5 flex items-end justify-between gap-3">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-grisSecundario">Selecciones recientes</p>
+                    <h2 class="mt-2 font-display text-3xl text-negroBase md:text-4xl">Nuevos lanzamientos</h2>
+                </div>
+                <a href="#" class="hidden rounded-full border border-negroBase px-4 py-2 text-sm font-semibold text-negroBase md:inline-flex">Ver todo</a>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <article class="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+                    <img src="./assets/imagen/nuevo-blazer-aura.jpg" alt="Blazer Aura de Lino" class="h-64 w-full object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-negroBase">Blazer Aura de Lino</h3>
+                        <button class="mt-3 w-full rounded-full bg-negroBase px-4 py-2 text-sm font-semibold text-blancoBase">Agregar · USD 79</button>
                     </div>
-
-                    <div class="flex flex-col gap-4 pt-4">
-                        <button type="submit" class="w-full bg-negroBase text-blancoBase py-4 rounded-full font-medium text-lg hover:bg-opacity-90 transition-all focus:ring-4 focus:ring-grisSuave outline-none">
-                            Agregar al carrito
-                        </button>
-                        <a href="checkout.html" class="w-full bg-verdeAmarillo text-negroBase py-4 rounded-full font-medium text-lg hover:bg-opacity-80 transition-all flex justify-center items-center gap-2">
-                            Comprar ahora
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-                        </a>
-                    </div>
-                </form>
-            </section>
-        </article>
-
-        <!-- Descripción Detallada -->
-        <section class="mt-24 border-t border-grisSuave pt-16">
-            <h2 class="font-display text-2xl lg:text-3xl font-bold text-negroBase mb-10 text-center lg:text-left">
-                Detalles del Producto
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-                <article class="bg-grisSuave p-8 rounded-[32px]">
-                    <h3 class="text-negroBase font-bold text-xl mb-4 flex items-center gap-2">Materiales y Cuidado</h3>
-                    <ul class="space-y-3 text-grisSecundario leading-relaxed">
-                        <li class="flex items-start gap-2"><span class="text-verdeAmarillo text-xl leading-none">&bull;</span>Confeccionado en 100% viscosa ecológica, suave al tacto.</li>
-                        <li class="flex items-start gap-2"><span class="text-verdeAmarillo text-xl leading-none">&bull;</span>Forro interior ligero y transpirable.</li>
-                        <li class="flex items-start gap-2"><span class="text-verdeAmarillo text-xl leading-none">&bull;</span>Estampado floral de alta fijación (no pierde color).</li>
-                        <li class="flex items-start gap-2"><span class="text-verdeAmarillo text-xl leading-none">&bull;</span>Recomendación: Lavar a máquina con agua fría y no usar secadora.</li>
-                    </ul>
                 </article>
-                <article class="flex flex-col justify-center">
-                    <h3 class="text-negroBase font-bold text-xl mb-4">Uso recomendado</h3>
-                    <p class="text-grisSecundario leading-relaxed mb-4">
-                        Este vestido es la pieza central perfecta para la temporada. Su diseño fluido y corte juvenil lo hacen ideal para <strong>salidas casuales de fin de semana, picnics primaverales o reuniones al aire libre</strong>.
-                    </p>
-                    <p class="text-grisSecundario leading-relaxed">
-                        Combínalo con zapatillas blancas para un look de día completamente relajado, o añade unos botines y una chaqueta ligera si el clima refresca.
-                    </p>
+                <article class="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+                    <img src="./assets/imagen/nuevo-vestido-jardin.jpg" alt="Vestido Jardin Pastel" class="h-64 w-full object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-negroBase">Vestido Jardin Pastel</h3>
+                        <button class="mt-3 w-full rounded-full bg-negroBase px-4 py-2 text-sm font-semibold text-blancoBase">Agregar · USD 52</button>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+                    <img src="./assets/imagen/nuevo-conjunto-denim.jpg" alt="Conjunto Denim Nube" class="h-64 w-full object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-negroBase">Conjunto Denim Nube</h3>
+                        <button class="mt-3 w-full rounded-full bg-negroBase px-4 py-2 text-sm font-semibold text-blancoBase">Agregar · USD 66</button>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+                    <img src="./assets/imagen/nuevo-bolso-crema.jpg" alt="Bolso Mini Crema" class="h-64 w-full object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-negroBase">Bolso Mini Crema</h3>
+                        <button class="mt-3 w-full rounded-full bg-negroBase px-4 py-2 text-sm font-semibold text-blancoBase">Agregar · USD 37</button>
+                    </div>
                 </article>
             </div>
         </section>
 
-    </main>
-
-    <!-- Footer Semántico -->
-    <footer class="bg-grisSuave mt-12 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                
-                <!-- Columna 1: Marca y Newsletter -->
-                <div class="lg:col-span-2">
-                    <a href="index.html" class="font-script text-4xl text-negroBase mb-6 block">florale</a>
-                    <p class="text-grisSecundario mb-6 max-w-sm">
-                        Únete a nuestra comunidad. Recibe un 10% de descuento en tu primera compra y entérate de nuevas colecciones antes que nadie.
-                    </p>
-                    <form class="flex max-w-md">
-                        <input type="email" placeholder="Tu correo electrónico" class="w-full bg-blancoBase border border-gray-300 rounded-l-full px-4 py-3 outline-none focus:border-negroBase text-sm" required aria-label="Correo electrónico para newsletter">
-                        <button type="submit" class="bg-negroBase text-blancoBase px-6 py-3 rounded-r-full font-medium text-sm hover:bg-opacity-90 transition-colors">
-                            Suscribirse
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Columna 2: Enlaces Tienda -->
+        <section class="mx-auto w-full max-w-7xl px-4 pb-14 md:px-6">
+            <div class="mb-5 flex items-end justify-between gap-3">
                 <div>
-                    <h3 class="font-bold text-negroBase mb-4">Tienda</h3>
-                    <ul class="space-y-3 text-sm text-grisSecundario">
-                        <li><a href="#" class="hover:text-negroBase transition-colors">Novedades</a></li>
-                        <li><a href="#" class="hover:text-negroBase transition-colors">Vestidos</a></li>
-                        <li><a href="#" class="hover:text-negroBase transition-colors">Tops & Blusas</a></li>
-                        <li><a href="#" class="hover:text-negroBase transition-colors">Accesorios</a></li>
-                        <li><a href="#" class="hover:text-negroBase transition-colors">Ofertas Especiales</a></li>
-                    </ul>
+                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-grisSecundario">Favoritos de la comunidad</p>
+                    <h2 class="mt-2 font-display text-3xl text-negroBase md:text-4xl">Mas vendidos</h2>
                 </div>
-
-                <!-- Columna 3: Ayuda y Soporte -->
-                <div>
-                    <h3 class="font-bold text-negroBase mb-4">Atención al Cliente</h3>
-                    <ul class="space-y-3 text-sm text-grisSecundario">
-                        <li><a href="#" class="hover:text-negroBase transition-colors">Contacto</a></li>
-                        <li><a href="#" class="hover:text-negroBase transition-colors">Envíos y Devoluciones</a></li>
-                        <li><a href="#" class="hover:text-negroBase transition-colors">Guía de Tallas</a></li>
-                        <li><a href="#" class="hover:text-negroBase transition-colors">Preguntas Frecuentes</a></li>
-                        <li><a href="#" class="hover:text-negroBase transition-colors">Términos y Condiciones</a></li>
-                    </ul>
-                </div>
-
+                <a href="#" class="hidden rounded-full border border-negroBase px-4 py-2 text-sm font-semibold text-negroBase md:inline-flex">Comprar top ventas</a>
             </div>
 
-            <!-- Copyright -->
-            <div class="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-grisSecundario">
-                    &copy; 2026 Florale E-commerce. Todos los derechos reservados.
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <article class="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+                    <img src="./assets/imagen/top-vestido-rubi.jpg" alt="Vestido Rubi Fluido" class="h-64 w-full object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-negroBase">Vestido Rubi Fluido</h3>
+                        <button class="mt-3 w-full rounded-full border border-negroBase px-4 py-2 text-sm font-semibold text-negroBase">Ver producto</button>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+                    <img src="./assets/imagen/top-chaqueta-beige.jpg" alt="Chaqueta Beige Esencial" class="h-64 w-full object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-negroBase">Chaqueta Beige Esencial</h3>
+                        <button class="mt-3 w-full rounded-full border border-negroBase px-4 py-2 text-sm font-semibold text-negroBase">Ver producto</button>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+                    <img src="./assets/imagen/top-blusa-seda.jpg" alt="Blusa Seda Aire" class="h-64 w-full object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-negroBase">Blusa Seda Aire</h3>
+                        <button class="mt-3 w-full rounded-full border border-negroBase px-4 py-2 text-sm font-semibold text-negroBase">Ver producto</button>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+                    <img src="./assets/imagen/top-tenis-blanc.jpg" alt="Tenis Blanc Neo" class="h-64 w-full object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-negroBase">Tenis Blanc Neo</h3>
+                        <button class="mt-3 w-full rounded-full border border-negroBase px-4 py-2 text-sm font-semibold text-negroBase">Ver producto</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-black/10 bg-gradient-to-br from-[#fffaf1] via-[#f7f4ec] to-[#f1efe8]">
+        <div class="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 md:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] md:px-6">
+            <section>
+                <p class="font-script text-5xl leading-none text-negroBase">Florale®</p>
+                <p class="mt-4 max-w-md text-sm leading-6 text-grisSecundario md:text-base">
+                    Moda femenina con mirada editorial, siluetas suaves y colecciones pensadas para acompañar cada temporada con ligereza y personalidad.
                 </p>
-                <div class="flex items-center gap-4 text-grisSecundario">
-                    <a href="#" class="hover:text-negroBase transition-colors" aria-label="Instagram">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
-                    </a>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="#" class="footer-cta footer-cta-primary">Explorar marca</a>
+                    <a href="#catalogo" class="footer-cta footer-cta-secondary">Ir al catálogo</a>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Categorías</h2>
+                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
+                    <li><a href="#" class="footer-link">Calzado</a></li>
+                    <li><a href="#" class="footer-link">Camisas</a></li>
+                    <li><a href="#" class="footer-link">Pantalones</a></li>
+                    <li><a href="#" class="footer-link">Accesorios</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Legal</h2>
+                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
+                    <li><a href="#" class="footer-link">Términos y condiciones</a></li>
+                    <li><a href="#" class="footer-link">Política de privacidad</a></li>
+                    <li><a href="#" class="footer-link">Sobre la marca</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Contacto</h2>
+                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
+                    <li>hola@florale.com</li>
+                    <li>+1 305 555 0148</li>
+                    <li>Lunes a sábado, 9:00 a 19:00</li>
+                    <li>Ciudad de México, México</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="border-t border-black/10">
+            <div class="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-5 text-xs text-grisSecundario md:flex-row md:items-center md:justify-between md:px-6">
+                <p>© 2026 Florale. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="transition hover:text-negroBase">Instagram</a>
+                    <a href="#" class="transition hover:text-negroBase">Pinterest</a>
+                    <a href="#" class="transition hover:text-negroBase">TikTok</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <script src="index.js"></script>
 </body>
 </html>
