@@ -1,11 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogo</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blancoBase: '#FFFFFF',
+                        grisSuave: '#F3F3F3',
+                        negroBase: '#1A1A1A',
+                        grisSecundario: '#757575',
+                        verdeAmarillo: '#e9f7b2',
+                        lavender: '#8875FF'
+                    },
+                    fontFamily: {
+                        sans: ['"Google Sans"', '"DM Sans"', 'sans-serif'],
+                        display: ['"Google Sans Flex"', '"DM Sans"', 'sans-serif'],
+                        script: ['"League Script"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body>
+    <header class="sticky top-0 z-50 border-b border-gray-200 bg-blancoBase/95 backdrop-blur">
+        <nav class="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-3 md:px-6" aria-label="Barra principal">
+            <a href="../index.html" class="flex items-center gap-2">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-verdeAmarillo text-negroBase font-display text-lg">F</span>
+                <div class="leading-tight">
+                    <p class="font-display text-xl text-negroBase">Florale®</p>
+                    <p class="text-xs text-grisSecundario">Moda juvenil</p>
+                </div>
+            </a>
+            <div class="hidden items-center gap-1 text-sm font-medium text-negroBase md:flex">
+                <a href="../index.html" class="rounded-full px-3 py-2 transition hover:bg-grisSuave">Inicio</a>
+                <a href="./catalogo.html" class="rounded-full px-3 py-2 transition hover:bg-grisSuave">Catálogo</a>
+            </div>
+            <form class="flex-1" role="search" aria-label="Buscar productos">
+                <label for="search" class="sr-only">Buscar</label>
+                <div class="relative">
+                    <input
+                        id="search"
+                        type="search"
+                        name="q"
+                        placeholder="Buscar vestidos, blusas y accesorios"
+                        class="w-full rounded-full border border-gray-300 bg-grisSuave py-2 pl-4 pr-12 text-sm text-negroBase placeholder:text-grisSecundario focus:border-negroBase focus:outline-none"
+                    >
+                    <button
+                        type="submit"
+                        class="absolute right-1 top-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-negroBase text-blancoBase transition hover:opacity-90"
+                        aria-label="Buscar"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35m0 0A7.5 7.5 0 1 0 6.04 6.04a7.5 7.5 0 0 0 10.61 10.61Z" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <a href="./cart.html" class="relative inline-flex items-center justify-center rounded-full border border-gray-300 p-2 text-negroBase transition hover:bg-grisSuave" aria-label="Carrito de compra">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386a1.5 1.5 0 0 1 1.414.98L5.654 6m0 0h12.192a1.5 1.5 0 0 1 1.445 1.902l-1.2 4.2a1.5 1.5 0 0 1-1.445 1.098H7.096a1.5 1.5 0 0 1-1.445-1.098L4.25 4.5M5.654 6l-1.404 6.102m5.25 6.148a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm8.25 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+                <span class="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-negroBase px-1 text-xs text-blancoBase">2</span>
+            </a>
+            <details class="relative">
+                <summary class="list-none">
+                    <span class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-gray-300 px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">
+                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-negroBase text-xs text-blancoBase">DV</span>
+                        <span class="hidden sm:inline">Mi cuenta</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="absolute right-0 mt-2 w-44 rounded-xl border border-gray-200 bg-blancoBase p-2 shadow-lg">
+                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Perfil</a>
+                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Mis pedidos</a>
+                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Cerrar sesión</a>
+                </div>
+            </details>
+        </nav>
+    </header>
 
+    <main class="mx-auto w-full max-w-7xl px-4 py-12 md:px-6">
+        <section aria-labelledby="catalogo-destacados">
+            <div class="mb-6">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-grisSecundario">Catálogo</p>
+                <h1 id="catalogo-destacados" class="mt-2 font-display text-3xl text-negroBase md:text-4xl">Productos</h1>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <article class="min-h-[24rem] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm" aria-label="Card de producto vacía">
+                    <div class="h-64 w-full bg-grisSuave"></div>
+                    <div class="space-y-3 p-4">
+                        <div class="h-5 w-3/4 rounded-full bg-grisSuave"></div>
+                        <div class="h-4 w-1/2 rounded-full bg-grisSuave"></div>
+                        <div class="h-10 w-full rounded-full bg-grisSuave"></div>
+                    </div>
+                </article>
+                <article class="min-h-[24rem] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm" aria-label="Card de producto vacía">
+                    <div class="h-64 w-full bg-grisSuave"></div>
+                    <div class="space-y-3 p-4">
+                        <div class="h-5 w-3/4 rounded-full bg-grisSuave"></div>
+                        <div class="h-4 w-1/2 rounded-full bg-grisSuave"></div>
+                        <div class="h-10 w-full rounded-full bg-grisSuave"></div>
+                    </div>
+                </article>
+                <article class="min-h-[24rem] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm" aria-label="Card de producto vacía">
+                    <div class="h-64 w-full bg-grisSuave"></div>
+                    <div class="space-y-3 p-4">
+                        <div class="h-5 w-3/4 rounded-full bg-grisSuave"></div>
+                        <div class="h-4 w-1/2 rounded-full bg-grisSuave"></div>
+                        <div class="h-10 w-full rounded-full bg-grisSuave"></div>
+                    </div>
+                </article>
+                <article class="min-h-[24rem] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm" aria-label="Card de producto vacía">
+                    <div class="h-64 w-full bg-grisSuave"></div>
+                    <div class="space-y-3 p-4">
+                        <div class="h-5 w-3/4 rounded-full bg-grisSuave"></div>
+                        <div class="h-4 w-1/2 rounded-full bg-grisSuave"></div>
+                        <div class="h-10 w-full rounded-full bg-grisSuave"></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-black/10 bg-gradient-to-br from-[#fffaf1] via-[#f7f4ec] to-[#f1efe8]">
+        <div class="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 md:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] md:px-6">
+            <section>
+                <p class="font-script text-5xl leading-none text-negroBase">Florale®</p>
+                <p class="mt-4 max-w-md text-sm leading-6 text-grisSecundario md:text-base">
+                    Moda femenina con mirada editorial, siluetas suaves y colecciones pensadas para acompañar cada temporada con ligereza y personalidad.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="../index.html" class="footer-cta footer-cta-primary">Inicio</a>
+                    <a href="./catalogo.html" class="footer-cta footer-cta-secondary">Ir al catálogo</a>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Categorías</h2>
+                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
+                    <li><a href="#" class="footer-link">Calzado</a></li>
+                    <li><a href="#" class="footer-link">Camisas</a></li>
+                    <li><a href="#" class="footer-link">Pantalones</a></li>
+                    <li><a href="#" class="footer-link">Accesorios</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Legal</h2>
+                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
+                    <li><a href="#" class="footer-link">Términos y condiciones</a></li>
+                    <li><a href="#" class="footer-link">Política de privacidad</a></li>
+                    <li><a href="#" class="footer-link">Sobre la marca</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Contacto</h2>
+                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
+                    <li>hola@florale.com</li>
+                    <li>+1 305 555 0148</li>
+                    <li>Lunes a sábado, 9:00 a 19:00</li>
+                    <li>Ciudad de México, México</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="border-t border-black/10">
+            <div class="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-5 text-xs text-grisSecundario md:flex-row md:items-center md:justify-between md:px-6">
+                <p>© 2026 Florale. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="transition hover:text-negroBase">Instagram</a>
+                    <a href="#" class="transition hover:text-negroBase">Pinterest</a>
+                    <a href="#" class="transition hover:text-negroBase">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
