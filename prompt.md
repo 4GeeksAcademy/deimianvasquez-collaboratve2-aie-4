@@ -20,4 +20,3 @@ Prompt: Debajo de la cuadrícula del producto, añade una nueva etiqueta <sectio
 
 **[El Footer del E-commerce]**
 Prompt: Al final del documento, fuera del main, implementa un componente <footer> con fondo grisSuave. Estructúralo en una cuadrícula responsiva: una columna principal que incluya el logo y un input para suscribirse a un newsletter con su respectivo botón de envío. Las siguientes columnas deben contener listas de enlaces para "Tienda" y "Atención al Cliente". Finaliza con una línea divisoria inferior que contenga el copyright y un icono genérico de redes sociales.
-
