@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras | Florale E-commerce</title>
+    <meta name="description" content="Revisa los productos que agregaste al carrito, actualiza cantidades y continúa con tu compra en Florale.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Florale E-commerce">
+    <link rel="canonical" href="https://www.florale.com/carrito">
+
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Carrito de Compras | Florale E-commerce">
+    <meta property="og:description" content="Administra tu carrito y completa tu compra con estilo en Florale.">
+    <meta property="og:url" content="https://www.florale.com/carrito">
+    <meta property="og:site_name" content="Florale">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=1200">
+    <meta property="og:image:alt" content="Bolsa de compras y accesorios de moda">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Carrito de Compras | Florale E-commerce">
+    <meta name="twitter:description" content="Administra tu carrito y completa tu compra con estilo en Florale.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=1200">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blancoBase: '#FFFFFF',
+                        grisSuave: '#F3F3F3',
+                        negroBase: '#1A1A1A',
+                        grisSecundario: '#757575',
+                        verdeAmarillo: '#e9f7b2',
+                        lavender: '#8875FF'
+                    },
+                    fontFamily: {
+                        sans: ['"Google Sans"', '"DM Sans"', 'sans-serif'],
+                        display: ['"Google Sans Flex"', '"DM Sans"', 'sans-serif'],
+                        script: ['"League Script"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-blancoBase text-negroBase font-sans antialiased selection:bg-verdeAmarillo selection:text-negroBase flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 border-b border-gray-200 bg-blancoBase/95 backdrop-blur">
+        <nav class="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-3 md:px-6" aria-label="Barra principal">
+            <a href="../index.html" class="flex items-center gap-2">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-verdeAmarillo text-negroBase font-display text-lg">F</span>
+                <div class="leading-tight">
+                    <p class="font-display text-xl text-negroBase">Florale®</p>
+                    <p class="text-xs text-grisSecundario">Moda juvenil</p>
+                </div>
+            </a>
+            <div class="hidden items-center gap-1 text-sm font-medium text-negroBase md:flex">
+                <a href="../index.html" class="rounded-full px-3 py-2 transition hover:bg-grisSuave">Inicio</a>
+                <a href="./catalogo.html" class="rounded-full px-3 py-2 transition hover:bg-grisSuave">Catálogo</a>
+            </div>
+            <form class="flex-1" role="search" aria-label="Buscar productos">
+                <label for="search" class="sr-only">Buscar</label>
+                <div class="relative">
+                    <input
+                        id="search"
+                        type="search"
+                        name="q"
+                        placeholder="Buscar vestidos, blusas y accesorios"
+                        class="w-full rounded-full border border-gray-300 bg-grisSuave py-2 pl-4 pr-12 text-sm text-negroBase placeholder:text-grisSecundario focus:border-negroBase focus:outline-none"
+                    >
+                    <button
+                        type="submit"
+                        class="absolute right-1 top-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-negroBase text-blancoBase transition hover:opacity-90"
+                        aria-label="Buscar"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35m0 0A7.5 7.5 0 1 0 6.04 6.04a7.5 7.5 0 0 0 10.61 10.61Z" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <a href="./cart.html" class="relative inline-flex items-center justify-center rounded-full border border-gray-300 p-2 text-negroBase transition hover:bg-grisSuave" aria-label="Carrito de compra">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386a1.5 1.5 0 0 1 1.414.98L5.654 6m0 0h12.192a1.5 1.5 0 0 1 1.445 1.902l-1.2 4.2a1.5 1.5 0 0 1-1.445 1.098H7.096a1.5 1.5 0 0 1-1.445-1.098L4.25 4.5M5.654 6l-1.404 6.102m5.25 6.148a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm8.25 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+                <span id="cart-count-badge" class="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-negroBase px-1 text-xs text-blancoBase">0</span>
+            </a>
+            <details class="relative">
+                <summary class="list-none">
+                    <span class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-gray-300 px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">
+                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-negroBase text-xs text-blancoBase">DV</span>
+                        <span class="hidden sm:inline">Mi cuenta</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="absolute right-0 mt-2 w-44 rounded-xl border border-gray-200 bg-blancoBase p-2 shadow-lg">
+                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Perfil</a>
+                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Mis pedidos</a>
+                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Cerrar sesión</a>
+                </div>
+            </details>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 w-full">
+        <nav aria-label="Breadcrumb" class="mb-8">
+            <ol class="flex items-center space-x-2 text-sm text-grisSecundario">
+                <li><a href="../index.html" class="hover:text-negroBase transition-colors">Inicio</a></li>
+                <li><span aria-hidden="true">/</span></li>
+                <li class="text-negroBase font-medium" aria-current="page">Carrito</li>
+            </ol>
+        </nav>
+
+        <section class="mb-8">
+            <span class="font-script text-lavender text-4xl">your picks</span>
+            <h1 class="font-display text-4xl lg:text-5xl font-bold tracking-tight text-negroBase mt-2">Carrito de Compras</h1>
+            <p class="text-grisSecundario mt-3">Revisa tus productos antes de continuar al pago.</p>
+        </section>
+
+        <section id="cart-layout" class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12 items-start">
+            <div class="lg:col-span-2">
+                <div id="cart-items" class="space-y-5" aria-live="polite" aria-label="Lista de productos en el carrito"></div>
+
+                <section id="empty-cart" class="hidden bg-grisSuave rounded-[32px] p-10 sm:p-14 text-center">
+                    <div class="mx-auto w-16 h-16 rounded-full bg-blancoBase flex items-center justify-center mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-negroBase" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.836L5.41 6.75m0 0h13.98m-13.98 0l1.51 7.548a1.125 1.125 0 001.103.902h8.954a1.125 1.125 0 001.103-.902L19.5 6.75m-14.09 0L4.5 4.5m15 2.25l.84-2.914A1.125 1.125 0 0019.253 2.5H17.25M9 19.5a.75.75 0 100 1.5.75.75 0 000-1.5zm9 0a.75.75 0 100 1.5.75.75 0 000-1.5z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-negroBase mb-2">Tu carrito esta vacio</h2>
+                    <p class="text-grisSecundario mb-8">Agrega productos para empezar tu compra.</p>
+                    <a href="../index.html" class="inline-flex items-center justify-center bg-negroBase text-blancoBase py-3 px-8 rounded-full font-medium hover:bg-opacity-90 transition-all">
+                        Seguir comprando
+                    </a>
+                </section>
+            </div>
+
+            <aside id="summary-card" class="bg-grisSuave rounded-[32px] p-7 sm:p-8 lg:sticky lg:top-28">
+                <h2 class="font-display text-2xl font-bold text-negroBase mb-6">Resumen de compra</h2>
+
+                <div class="space-y-4 text-sm sm:text-base">
+                    <div class="flex items-center justify-between">
+                        <span class="text-grisSecundario">Productos</span>
+                        <span id="summary-items" class="font-medium text-negroBase">0</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-grisSecundario">Subtotal</span>
+                        <span id="summary-subtotal" class="font-medium text-negroBase">$0.00</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-grisSecundario">Impuestos</span>
+                        <span id="summary-taxes" class="font-medium text-negroBase">$0.00</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-grisSecundario">Envio</span>
+                        <span id="summary-shipping" class="font-medium text-negroBase">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-white/80">
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-negroBase">Total</span>
+                        <span id="summary-total" class="text-2xl font-bold text-negroBase">$0.00</span>
+                    </div>
+                    <p class="text-xs text-grisSecundario mt-2">Impuestos y envio como placeholders en esta version.</p>
+                </div>
+
+                <div class="mt-8 flex flex-col gap-3">
+                    <a href="../index.html" class="w-full bg-blancoBase text-negroBase py-3.5 rounded-full font-medium text-center border border-negroBase/10 hover:border-negroBase transition-colors">
+                        Continuar comprando
+                    </a>
+                    <button id="checkout-button" type="button" class="w-full bg-negroBase text-blancoBase py-3.5 rounded-full font-medium hover:bg-opacity-90 transition-all focus:ring-4 focus:ring-white outline-none disabled:opacity-40 disabled:cursor-not-allowed" aria-label="Proceder al pago">
+                        Proceder al pago
+                    </button>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="border-t border-black/10 bg-gradient-to-br from-[#fffaf1] via-[#f7f4ec] to-[#f1efe8]">
+        <div class="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 md:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] md:px-6">
+            <section>
+                <p class="font-script text-5xl leading-none text-negroBase">Florale®</p>
+                <p class="mt-4 max-w-md text-sm leading-6 text-grisSecundario md:text-base">
+                    Moda femenina con mirada editorial, siluetas suaves y colecciones pensadas para acompañar cada temporada con ligereza y personalidad.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="../index.html" class="footer-cta footer-cta-primary">Explorar marca</a>
+                    <a href="./catalogo.html" class="footer-cta footer-cta-secondary">Ir al catálogo</a>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Categorías</h2>
+                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
+                    <li><a href="#" class="footer-link">Calzado</a></li>
+                    <li><a href="#" class="footer-link">Camisas</a></li>
+                    <li><a href="#" class="footer-link">Pantalones</a></li>
+                    <li><a href="#" class="footer-link">Accesorios</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Legal</h2>
+                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
+                    <li><a href="#" class="footer-link">Términos y condiciones</a></li>
+                    <li><a href="#" class="footer-link">Política de privacidad</a></li>
+                    <li><a href="#" class="footer-link">Sobre la marca</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Contacto</h2>
+                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
+                    <li>hola@florale.com</li>
+                    <li>+1 305 555 0148</li>
+                    <li>Lunes a sábado, 9:00 a 19:00</li>
+                    <li>Ciudad de México, México</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="border-t border-black/10">
+            <div class="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-5 text-xs text-grisSecundario md:flex-row md:items-center md:justify-between md:px-6">
+                <p>© 2026 Florale. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="transition hover:text-negroBase">Instagram</a>
+                    <a href="#" class="transition hover:text-negroBase">Pinterest</a>
+                    <a href="#" class="transition hover:text-negroBase">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js_code/cart.js"></script>
+</body>
+</html>
