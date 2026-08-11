@@ -176,6 +176,22 @@ function createCartItemTemplate(item, index) {
 function toggleEmptyState(isEmpty) {
     emptyCartContainer.classList.toggle('hidden', !isEmpty);
     cartItemsContainer.classList.toggle('hidden', isEmpty);
+    if (!checkoutButton) {
+        return;
+    }
+
+    if (checkoutButton.tagName === 'A') {
+        checkoutButton.setAttribute('aria-disabled', String(isEmpty));
+        checkoutButton.classList.toggle('pointer-events-none', isEmpty);
+        checkoutButton.classList.toggle('opacity-40', isEmpty);
+        if (isEmpty) {
+            checkoutButton.setAttribute('tabindex', '-1');
+        } else {
+            checkoutButton.removeAttribute('tabindex');
+        }
+        return;
+    }
+
     checkoutButton.disabled = isEmpty;
 }
 
