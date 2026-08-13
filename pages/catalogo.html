@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../assets/fonts/fonts.css">
+    <title>Catálogo | Florale E-commerce</title>
+    <meta name="description" content="Explora nuestra colección completa de ropa de mujer. Prendas ligeras, vestidos, blusas y accesorios para cada ritmo del día.">
+    
+    <!-- Importación de fuentes (Consistente con el Home, Producto y Carrito) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=League+Script&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS con tu configuración original -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -29,160 +35,384 @@
         }
     </script>
 </head>
-<body>
-    <header class="sticky top-0 z-50 border-b border-gray-200 bg-blancoBase/95 backdrop-blur">
-        <nav class="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-3 md:px-6" aria-label="Barra principal">
-            <a href="../index.html" class="flex items-center gap-2">
-                <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-verdeAmarillo text-negroBase font-display text-lg">F</span>
-                <div class="leading-tight">
-                    <p class="font-display text-xl text-negroBase">Florale®</p>
-                    <p class="text-xs text-grisSecundario">Moda juvenil</p>
-                </div>
+<body class="bg-blancoBase text-negroBase font-sans antialiased selection:bg-verdeAmarillo selection:text-negroBase flex flex-col min-h-screen">
+
+    <!-- Header Semántico (Idéntico a tus otras vistas) -->
+    <header class="sticky top-0 z-50 bg-blancoBase border-b border-grisSuave">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
+            
+            <a href="../index.html" class="font-script text-4xl text-lavender hover:text-negroBase transition-colors" aria-label="Ir al inicio">
+                florale
             </a>
-            <div class="hidden items-center gap-1 text-sm font-medium text-negroBase md:flex">
-                <a href="../index.html" class="rounded-full px-3 py-2 transition hover:bg-grisSuave">Inicio</a>
-                <a href="./catalogo.html" class="rounded-full px-3 py-2 transition hover:bg-grisSuave">Catálogo</a>
-            </div>
-            <form class="flex-1" role="search" aria-label="Buscar productos">
-                <label for="search" class="sr-only">Buscar</label>
-                <div class="relative">
-                    <input
-                        id="search"
-                        type="search"
-                        name="q"
-                        placeholder="Buscar vestidos, blusas y accesorios"
-                        class="w-full rounded-full border border-gray-300 bg-grisSuave py-2 pl-4 pr-12 text-sm text-negroBase placeholder:text-grisSecundario focus:border-negroBase focus:outline-none"
-                    >
-                    <button
-                        type="submit"
-                        class="absolute right-1 top-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-negroBase text-blancoBase transition hover:opacity-90"
-                        aria-label="Buscar"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35m0 0A7.5 7.5 0 1 0 6.04 6.04a7.5 7.5 0 0 0 10.61 10.61Z" />
-                        </svg>
-                    </button>
-                </div>
-            </form>
-            <a href="./cart.html" class="relative inline-flex items-center justify-center rounded-full border border-gray-300 p-2 text-negroBase transition hover:bg-grisSuave" aria-label="Carrito de compra">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386a1.5 1.5 0 0 1 1.414.98L5.654 6m0 0h12.192a1.5 1.5 0 0 1 1.445 1.902l-1.2 4.2a1.5 1.5 0 0 1-1.445 1.098H7.096a1.5 1.5 0 0 1-1.445-1.098L4.25 4.5M5.654 6l-1.404 6.102m5.25 6.148a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm8.25 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+
+            <div class="hidden md:flex flex-1 max-w-lg bg-grisSuave rounded-full px-4 py-2.5 items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-grisSecundario">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                 </svg>
-                <span class="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-negroBase px-1 text-xs text-blancoBase">2</span>
-            </a>
-            <details class="relative">
-                <summary class="list-none">
-                    <span class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-gray-300 px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">
-                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-negroBase text-xs text-blancoBase">DV</span>
-                        <span class="hidden sm:inline">Mi cuenta</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                <input type="text" placeholder="¿Qué estás buscando?" class="bg-transparent w-full text-sm outline-none text-negroBase placeholder-grisSecundario">
+            </div>
+
+            <nav class="flex items-center gap-4 lg:gap-6" aria-label="Navegación principal">
+                <a href="./catalogo.html" class="hidden lg:flex items-center gap-1 font-medium hover:text-grisSecundario transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    Menú
+                </a>
+
+                <div class="flex items-center gap-3">
+                    <a href="./product_view.html" aria-label="Ir al producto destacado" class="p-2 hover:bg-grisSuave rounded-full transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                         </svg>
-                    </span>
-                </summary>
-                <div class="absolute right-0 mt-2 w-44 rounded-xl border border-gray-200 bg-blancoBase p-2 shadow-lg">
-                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Perfil</a>
-                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Mis pedidos</a>
-                    <a href="#" class="block rounded-lg px-3 py-2 text-sm text-negroBase hover:bg-grisSuave">Cerrar sesión</a>
+                    </a>
+                    <a href="./cart.html" aria-label="Ir al carrito de compras" class="p-2 hover:bg-grisSuave rounded-full transition-colors relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                        </svg>
+                        <span id="cart-count-badge" class="absolute top-0 right-0 bg-verdeAmarillo text-negroBase text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center translate-x-1 -translate-y-1">2</span>
+                    </a>
+                    <a href="./checkout.html" class="hidden sm:flex items-center gap-2 hover:opacity-80 transition-opacity ml-2" aria-label="Ir al checkout">
+                        <img src="https://i.pravatar.cc/100?img=5" alt="Avatar del usuario" class="w-8 h-8 rounded-full bg-grisSuave">
+                    </a>
                 </div>
-            </details>
-        </nav>
+            </nav>
+        </div>
     </header>
 
-    <main class="mx-auto w-full max-w-7xl px-4 py-12 md:px-6">
-        <section aria-labelledby="catalogo-destacados">
-            <div class="mb-6">
-                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-grisSecundario">Catálogo</p>
-                <h1 id="catalogo-destacados" class="mt-2 font-display text-3xl text-negroBase md:text-4xl">Productos</h1>
+    <!-- Contenedor General de Página -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 w-full flex flex-col gap-14">
+
+        <!-- Breadcrumbs consistentes -->
+        <nav aria-label="Breadcrumb" class="mb-2">
+            <ol class="flex items-center space-x-2 text-sm text-grisSecundario">
+                <li><a href="../index.html" class="hover:text-negroBase transition-colors">Inicio</a></li>
+                <li><span aria-hidden="true">/</span></li>
+                <li class="text-negroBase font-medium" aria-current="page">Catálogo</li>
+            </ol>
+        </nav>
+
+        <!-- Sección Hero Principal -->
+        <section aria-labelledby="hero-title" class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+
+            <!-- Columna Izquierda: Imagen Destacada -->
+            <article class="relative overflow-hidden rounded-[32px] min-h-[430px] sm:min-h-[520px]">
+                <img
+                    src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200"
+                    alt="Modelo vistiendo colección de temporada"
+                    class="absolute inset-0 h-full w-full object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-negroBase/90 via-negroBase/35 to-transparent"></div>
+
+                <div class="relative h-full flex flex-col justify-end p-8 sm:p-10 text-blancoBase">
+                    <p class="text-xs sm:text-sm tracking-[0.2em] uppercase text-blancoBase/80">Selección floral</p>
+                    <h1 id="hero-title" class="mt-3 font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-bold">
+                        Colección de la semana
+                    </h1>
+
+                    <div class="mt-8 flex items-center justify-between gap-4 flex-wrap">
+                        <div class="flex items-center gap-3">
+                            <img
+                                src="https://i.pravatar.cc/120?img=1"
+                                alt="Avatar de estilista florale"
+                                class="w-12 h-12 rounded-full border-2 border-blancoBase object-cover"
+                            />
+                            <div>
+                                <p class="text-sm font-medium">Equipo florale</p>
+                                <p class="text-xs text-blancoBase/75">Curaduría semanal</p>
+                            </div>
+                        </div>
+
+                        <a
+                            href="#catalogo"
+                            class="inline-flex items-center gap-2 text-sm font-medium border border-blancoBase px-6 py-2.5 rounded-full hover:bg-blancoBase hover:text-negroBase transition-colors"
+                        >
+                            Explorar la colección
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Columna Derecha: Texto, CTA y Mini Productos -->
+            <article class="bg-grisSuave rounded-[32px] p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
+                <div>
+                    <span class="font-script text-lavender text-4xl mb-2 block">new arrivals</span>
+                    <h2 class="font-display text-4xl sm:text-5xl leading-[1.1] font-bold text-negroBase">
+                        Prendas ligeras para cada ritmo del día
+                    </h2>
+                    <p class="mt-4 text-grisSecundario text-base max-w-xl">
+                        Siluetas suaves, texturas cómodas y tonos limpios para combinar sin esfuerzo. Diseñadas para moverte con estilo.
+                    </p>
+                </div>
+
+                <div class="mt-8">
+                    <a
+                        href="#catalogo"
+                        class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-verdeAmarillo text-negroBase font-medium hover:bg-opacity-80 transition-opacity"
+                    >
+                        Comprar ahora
+                    </a>
+                </div>
+
+                <!-- Lista de Mini Productos -->
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <article class="bg-blancoBase rounded-[24px] p-3 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer">
+                        <a href="./product_view.html" class="block">
+                            <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&q=80&w=400" alt="Mini producto blusa luna" class="w-full h-32 object-cover rounded-[16px]"/>
+                            <h3 class="mt-3 text-sm font-medium text-negroBase">Blusa Luna</h3>
+                            <p class="text-sm font-bold text-negroBase">$48.00</p>
+                        </a>
+                    </article>
+                    <article class="bg-blancoBase rounded-[24px] p-3 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer">
+                        <a href="./product_view.html" class="block">
+                            <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&q=80&w=400" alt="Mini producto pantalón aire" class="w-full h-32 object-cover rounded-[16px]"/>
+                            <h3 class="mt-3 text-sm font-medium text-negroBase">Pantalón Aire</h3>
+                            <p class="text-sm font-bold text-negroBase">$55.00</p>
+                        </a>
+                    </article>
+                    <article class="bg-blancoBase rounded-[24px] p-3 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer">
+                        <a href="./product_view.html" class="block">
+                            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=400" alt="Mini producto vestido pétalo" class="w-full h-32 object-cover rounded-[16px]"/>
+                            <h3 class="mt-3 text-sm font-medium text-negroBase">Vestido Pétalo</h3>
+                            <p class="text-sm font-bold text-negroBase">$72.00</p>
+                        </a>
+                    </article>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sección de Catálogo de Productos -->
+        <section id="catalogo" aria-labelledby="catalogo-title" class="space-y-8 pt-8">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                <h2 id="catalogo-title" class="font-display text-4xl lg:text-5xl font-bold text-negroBase">Nuestro Catálogo</h2>
+
+                <!-- Grupo de Filtros Pills -->
+                <div class="flex items-center gap-3 flex-wrap">
+                    <button type="button" class="px-6 py-2.5 rounded-full bg-negroBase text-blancoBase text-sm font-medium">
+                        Más vendidos
+                    </button>
+                    <button type="button" class="px-6 py-2.5 rounded-full bg-blancoBase border border-grisSuave text-negroBase text-sm font-medium hover:border-negroBase transition-colors">
+                        Tendencia
+                    </button>
+                    <button type="button" class="px-6 py-2.5 rounded-full bg-blancoBase border border-grisSuave text-lavender font-script text-2xl hover:border-lavender transition-colors">
+                        empathy
+                    </button>
+                </div>
             </div>
 
-            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                <article class="min-h-[24rem] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm" aria-label="Card de producto vacía">
-                    <div class="h-64 w-full bg-grisSuave"></div>
-                    <div class="space-y-3 p-4">
-                        <div class="h-5 w-3/4 rounded-full bg-grisSuave"></div>
-                        <div class="h-4 w-1/2 rounded-full bg-grisSuave"></div>
-                        <div class="h-10 w-full rounded-full bg-grisSuave"></div>
+            <!-- Grid Responsive de Productos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+
+                <!-- Tarjeta Producto 1 -->
+                <article class="group cursor-pointer">
+                    <a href="./product_view.html" class="block">
+                    <div class="relative bg-grisSuave rounded-[24px] overflow-hidden aspect-[3/4] mb-4">
+                        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=700" alt="Cardigan nube" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <span class="absolute top-4 left-4 bg-blancoBase text-negroBase text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Tejido</span>
+                        <button type="button" aria-label="Agregar a favoritos" class="absolute top-4 right-4 p-2.5 bg-blancoBase rounded-full shadow-sm hover:bg-verdeAmarillo hover:text-negroBase text-grisSecundario transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </button>
                     </div>
-                </article>
-                <article class="min-h-[24rem] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm" aria-label="Card de producto vacía">
-                    <div class="h-64 w-full bg-grisSuave"></div>
-                    <div class="space-y-3 p-4">
-                        <div class="h-5 w-3/4 rounded-full bg-grisSuave"></div>
-                        <div class="h-4 w-1/2 rounded-full bg-grisSuave"></div>
-                        <div class="h-10 w-full rounded-full bg-grisSuave"></div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-medium text-negroBase text-lg mb-1">Cardigan Nube</h3>
+                        </div>
+                        <p class="font-bold text-negroBase">$64.00</p>
                     </div>
+                    </a>
                 </article>
-                <article class="min-h-[24rem] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm" aria-label="Card de producto vacía">
-                    <div class="h-64 w-full bg-grisSuave"></div>
-                    <div class="space-y-3 p-4">
-                        <div class="h-5 w-3/4 rounded-full bg-grisSuave"></div>
-                        <div class="h-4 w-1/2 rounded-full bg-grisSuave"></div>
-                        <div class="h-10 w-full rounded-full bg-grisSuave"></div>
+
+                <!-- Tarjeta Producto 2 -->
+                <article class="group cursor-pointer">
+                    <a href="./product_view.html" class="block">
+                    <div class="relative bg-grisSuave rounded-[24px] overflow-hidden aspect-[3/4] mb-4">
+                        <img src="https://images.unsplash.com/photo-1583496922787-b811802a4d3f?auto=format&fit=crop&q=80&w=700" alt="Falda duna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <span class="absolute top-4 left-4 bg-verdeAmarillo text-negroBase text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Oferta</span>
+                        <button type="button" aria-label="Agregar a favoritos" class="absolute top-4 right-4 p-2.5 bg-blancoBase rounded-full shadow-sm hover:bg-verdeAmarillo hover:text-negroBase text-grisSecundario transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </button>
                     </div>
-                </article>
-                <article class="min-h-[24rem] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm" aria-label="Card de producto vacía">
-                    <div class="h-64 w-full bg-grisSuave"></div>
-                    <div class="space-y-3 p-4">
-                        <div class="h-5 w-3/4 rounded-full bg-grisSuave"></div>
-                        <div class="h-4 w-1/2 rounded-full bg-grisSuave"></div>
-                        <div class="h-10 w-full rounded-full bg-grisSuave"></div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-medium text-negroBase text-lg mb-1">Falda Duna</h3>
+                        </div>
+                        <p class="font-bold text-negroBase"><span class="line-through text-grisSecundario font-normal text-sm mr-1">$58.00</span> $49.00</p>
                     </div>
+                    </a>
                 </article>
+
+                <!-- Tarjeta Producto 3 -->
+                <article class="group cursor-pointer">
+                    <a href="./product_view.html" class="block">
+                    <div class="relative bg-grisSuave rounded-[24px] overflow-hidden aspect-[3/4] mb-4">
+                        <img src="https://images.unsplash.com/photo-1596783049195-236b2839955e?auto=format&fit=crop&q=80&w=700" alt="Camisa aura" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <button type="button" aria-label="Agregar a favoritos" class="absolute top-4 right-4 p-2.5 bg-blancoBase rounded-full shadow-sm hover:bg-verdeAmarillo hover:text-negroBase text-grisSecundario transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-medium text-negroBase text-lg mb-1">Camisa Aura</h3>
+                        </div>
+                        <p class="font-bold text-negroBase">$46.00</p>
+                    </div>
+                    </a>
+                </article>
+
+                <!-- Tarjeta Producto 4 -->
+                <article class="group cursor-pointer">
+                    <a href="./product_view.html" class="block">
+                    <div class="relative bg-grisSuave rounded-[24px] overflow-hidden aspect-[3/4] mb-4">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=700" alt="Vestido rocío" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <span class="absolute top-4 left-4 bg-verdeAmarillo text-negroBase text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Oferta</span>
+                        <button type="button" aria-label="Agregar a favoritos" class="absolute top-4 right-4 p-2.5 bg-blancoBase rounded-full shadow-sm hover:bg-verdeAmarillo hover:text-negroBase text-grisSecundario transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-medium text-negroBase text-lg mb-1">Vestido Rocío</h3>
+                        </div>
+                        <p class="font-bold text-negroBase"><span class="line-through text-grisSecundario font-normal text-sm mr-1">$86.00</span> $74.00</p>
+                    </div>
+                    </a>
+                </article>
+
+                <!-- Tarjeta Producto 5 -->
+                <article class="group cursor-pointer">
+                    <a href="./product_view.html" class="block">
+                    <div class="relative bg-grisSuave rounded-[24px] overflow-hidden aspect-[3/4] mb-4">
+                        <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&q=80&w=700" alt="Pantalón brisa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <button type="button" aria-label="Agregar a favoritos" class="absolute top-4 right-4 p-2.5 bg-blancoBase rounded-full shadow-sm hover:bg-verdeAmarillo hover:text-negroBase text-grisSecundario transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-medium text-negroBase text-lg mb-1">Pantalón Brisa</h3>
+                        </div>
+                        <p class="font-bold text-negroBase">$52.00</p>
+                    </div>
+                    </a>
+                </article>
+
+                <!-- Tarjeta Producto 6 -->
+                <article class="group cursor-pointer">
+                    <a href="./product_view.html" class="block">
+                    <div class="relative bg-grisSuave rounded-[24px] overflow-hidden aspect-[3/4] mb-4">
+                        <img src="https://images.unsplash.com/photo-1604467794349-0b74285de7e7?auto=format&fit=crop&q=80&w=700" alt="Blazer claro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <button type="button" aria-label="Agregar a favoritos" class="absolute top-4 right-4 p-2.5 bg-blancoBase rounded-full shadow-sm hover:bg-verdeAmarillo hover:text-negroBase text-grisSecundario transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-medium text-negroBase text-lg mb-1">Blazer Claro</h3>
+                        </div>
+                        <p class="font-bold text-negroBase">$79.00</p>
+                    </div>
+                    </a>
+                </article>
+                
+                <!-- Tarjeta Producto 7 -->
+                <article class="group cursor-pointer">
+                    <a href="./product_view.html" class="block">
+                    <div class="relative bg-grisSuave rounded-[24px] overflow-hidden aspect-[3/4] mb-4">
+                        <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&q=80&w=700" alt="Top esencia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <span class="absolute top-4 left-4 bg-verdeAmarillo text-negroBase text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Oferta</span>
+                        <button type="button" aria-label="Agregar a favoritos" class="absolute top-4 right-4 p-2.5 bg-blancoBase rounded-full shadow-sm hover:bg-verdeAmarillo hover:text-negroBase text-grisSecundario transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-medium text-negroBase text-lg mb-1">Top Esencia</h3>
+                        </div>
+                        <p class="font-bold text-negroBase"><span class="line-through text-grisSecundario font-normal text-sm mr-1">$41.00</span> $34.00</p>
+                    </div>
+                    </a>
+                </article>
+
+                <!-- Tarjeta Producto 8 -->
+                <article class="group cursor-pointer">
+                    <a href="./product_view.html" class="block">
+                    <div class="relative bg-grisSuave rounded-[24px] overflow-hidden aspect-[3/4] mb-4">
+                        <img src="https://images.unsplash.com/photo-1485230895905-ef40ba366909?auto=format&fit=crop&q=80&w=700" alt="Set garden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <button type="button" aria-label="Agregar a favoritos" class="absolute top-4 right-4 p-2.5 bg-blancoBase rounded-full shadow-sm hover:bg-verdeAmarillo hover:text-negroBase text-grisSecundario transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-medium text-negroBase text-lg mb-1">Set Garden</h3>
+                        </div>
+                        <p class="font-bold text-negroBase">$88.00</p>
+                    </div>
+                    </a>
+                </article>
+
             </div>
+            
+            <div class="mt-12 flex justify-center pt-8">
+                <a href="./product_view.html" class="inline-flex items-center justify-center border border-gray-300 text-negroBase px-8 py-3 rounded-full font-medium hover:border-negroBase transition-colors">
+                    Cargar más productos
+                </a>
+            </div>
+            
         </section>
     </main>
 
-    <footer class="border-t border-black/10 bg-gradient-to-br from-[#fffaf1] via-[#f7f4ec] to-[#f1efe8]">
-        <div class="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 md:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] md:px-6">
-            <section>
-                <p class="font-script text-5xl leading-none text-negroBase">Florale®</p>
-                <p class="mt-4 max-w-md text-sm leading-6 text-grisSecundario md:text-base">
-                    Moda femenina con mirada editorial, siluetas suaves y colecciones pensadas para acompañar cada temporada con ligereza y personalidad.
-                </p>
-                <div class="mt-6 flex flex-wrap gap-3">
-                    <a href="../index.html" class="footer-cta footer-cta-primary">Inicio</a>
-                    <a href="./catalogo.html" class="footer-cta footer-cta-secondary">Ir al catálogo</a>
+    <!-- Footer Semántico (Idéntico a tus otras vistas) -->
+    <footer class="bg-grisSuave border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                
+                <div class="lg:col-span-2">
+                    <a href="../index.html" class="font-script text-4xl text-negroBase mb-6 block">florale</a>
+                    <p class="text-grisSecundario mb-6 max-w-sm">
+                        Únete a nuestra comunidad. Recibe un 10% de descuento en tu primera compra y entérate de nuevas colecciones antes que nadie.
+                    </p>
+                    <form class="flex max-w-md">
+                        <input type="email" placeholder="Tu correo electrónico" class="w-full bg-blancoBase border border-gray-300 rounded-l-full px-4 py-3 outline-none focus:border-negroBase text-sm" required aria-label="Correo electrónico para newsletter">
+                        <button type="submit" class="bg-negroBase text-blancoBase px-6 py-3 rounded-r-full font-medium text-sm hover:bg-opacity-90 transition-colors">
+                            Suscribirse
+                        </button>
+                    </form>
                 </div>
-            </section>
 
-            <section>
-                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Categorías</h2>
-                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
-                    <li><a href="#" class="footer-link">Calzado</a></li>
-                    <li><a href="#" class="footer-link">Camisas</a></li>
-                    <li><a href="#" class="footer-link">Pantalones</a></li>
-                    <li><a href="#" class="footer-link">Accesorios</a></li>
-                </ul>
-            </section>
+                <div>
+                    <h3 class="font-bold text-negroBase mb-4">Tienda</h3>
+                    <ul class="space-y-3 text-sm text-grisSecundario">
+                        <li><a href="./catalogo.html" class="hover:text-negroBase transition-colors">Novedades</a></li>
+                        <li><a href="./product_view.html" class="hover:text-negroBase transition-colors">Vestidos</a></li>
+                        <li><a href="./product_view.html" class="hover:text-negroBase transition-colors">Tops & Blusas</a></li>
+                        <li><a href="./product_view.html" class="hover:text-negroBase transition-colors">Accesorios</a></li>
+                        <li><a href="./catalogo.html" class="hover:text-negroBase transition-colors">Ofertas Especiales</a></li>
+                    </ul>
+                </div>
 
-            <section>
-                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Legal</h2>
-                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
-                    <li><a href="#" class="footer-link">Términos y condiciones</a></li>
-                    <li><a href="#" class="footer-link">Política de privacidad</a></li>
-                    <li><a href="#" class="footer-link">Sobre la marca</a></li>
-                </ul>
-            </section>
+                <div>
+                    <h3 class="font-bold text-negroBase mb-4">Atención al Cliente</h3>
+                    <ul class="space-y-3 text-sm text-grisSecundario">
+                        <li><a href="./checkout.html" class="hover:text-negroBase transition-colors">Contacto</a></li>
+                        <li><a href="./checkout.html" class="hover:text-negroBase transition-colors">Envíos y Devoluciones</a></li>
+                        <li><a href="./product_view.html" class="hover:text-negroBase transition-colors">Guía de Tallas</a></li>
+                        <li><a href="./cart.html" class="hover:text-negroBase transition-colors">Preguntas Frecuentes</a></li>
+                        <li><a href="./checkout.html" class="hover:text-negroBase transition-colors">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
 
-            <section>
-                <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-negroBase">Contacto</h2>
-                <ul class="mt-4 space-y-3 text-sm text-grisSecundario">
-                    <li>hola@florale.com</li>
-                    <li>+1 305 555 0148</li>
-                    <li>Lunes a sábado, 9:00 a 19:00</li>
-                    <li>Ciudad de México, México</li>
-                </ul>
-            </section>
-        </div>
-
-        <div class="border-t border-black/10">
-            <div class="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-5 text-xs text-grisSecundario md:flex-row md:items-center md:justify-between md:px-6">
-                <p>© 2026 Florale. Todos los derechos reservados.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="transition hover:text-negroBase">Instagram</a>
-                    <a href="#" class="transition hover:text-negroBase">Pinterest</a>
-                    <a href="#" class="transition hover:text-negroBase">TikTok</a>
+            <div class="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-grisSecundario">
+                    &copy; 2026 Florale E-commerce. Todos los derechos reservados.
+                </p>
+                <div class="flex items-center gap-4 text-grisSecundario">
+                    <a href="https://www.instagram.com/florale" class="hover:text-negroBase transition-colors" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                    </a>
                 </div>
             </div>
         </div>
